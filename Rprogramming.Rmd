@@ -1,0 +1,85 @@
+---
+title: "Git & Github"
+output:
+  html_notebook: default
+  html_document:
+    highlight: textemate
+    theme: spacelab
+    toc: yes
+---
+
+# Outlines
+- Version control
+
+- Git & Github
+
+- R Markdown: Note Book
+
+- Demo
+
+#  Version control (VC)
+*What is VC?*
+
+"Version control is a system  that records changes to a file or set of files over time so that you can recall specific versions later" ref: https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
+
+VC allows you to: revert files back to a previous state, revert the entire project back to a previous state, compare changes over time, see who last modified something that might be causing a problem, who introduced an issue and when, and more. Using a VCS also generally means that if you screw things up or lose files, you can easily recover
+
+
+# Git & Github
+*What is git? and github?*
+
+- git is a version control system
+
+- A git repository (a.k.a repo) is basically a folder/directory that is
+under version control.
+
+- github is a public place for hosting git repositories
+
+*Why use git?*
+
+- To maintain a complete history of your code and project.
+It's the best way to share code, review code, and merge changes
+easily
+
+*What are git verbs?*
+
+In RStudio most commands translate directly to buttons:
+
+- Commit: Committing is the action of storing a set of files (in a repository) to a version
+
+- Push: After you commited your changes you push them to repo
+
+- Pull: If collaborating as a group you pull any new things other people have changed
+
+- Diff: Two different versions may be “diffed,” which means to reveal the changes between them
+
+- Stage: Not all files need to be included in a version; staging a set of files marks them for inclusion in the version when the next commit happens. 
+
+You can also use the command line version, by clicking the cog and then “Shell” in the git tab in RStudio.
+
+*How to get started?*
+
+If you’ve never used Git or GitHub before, start by installing Git and creating a GitHub account. Then, link the two together:
+
+- 1. Install git from: http://r-pkgs.had.co.nz/git.html
+
+- 2. Tell Git your user.name and email. These are used to label each commit so that when you start collaborating with others, it’s clear who made each change
+- 3. Create an account on GitHub, https://github.com
+- 4. Create a public repo from your github account
+- 5. create local git repo using R studio project and clone your online repo to the local one 
+
+
+# Demo
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+```{r}
+ggplot2::qplot(Sepal.Length, Petal.Length, data = iris, color = Species, 
+      size = Petal.Width)
+```
+
