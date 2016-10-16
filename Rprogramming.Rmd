@@ -1,19 +1,15 @@
 ---
 title: "Git & Github"
 output: 
-  html_document: default
-  html_notebok: default
+#  html_notebook: default
+  html_document: 
+    highlight: textmate
+    theme: spacelab
+    toc: yes
 runtime: shiny 
 ---
 
-# Outlines
-- Version control
 
-- Git & Github
-
-- R Markdown: Note Book
-
-- Demo
 
 #  Version control (VC)
 *What is VC?*
@@ -71,6 +67,13 @@ If you’ve never used Git or GitHub before, start by installing Git and creatin
 
 Read if you want more details: https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN
 
+
+# R Markdown & Note Book
+The Note book allows you to produce interactive reporting, to run part (chunk) of your codes vs. all your codes (R markdown). The note book is only available under R markdown Preview version here:
+https://www.rstudio.com/products/rstudio/download/preview/
+
+
+
 # Demo
 
 ```{r setup}
@@ -80,7 +83,7 @@ library(shiny)
 ```
 
 ```{r}
-son <- rnorm(200, 10,2)
+son <- rnorm(200, 0,20)
 summary(son)
 ```
 
