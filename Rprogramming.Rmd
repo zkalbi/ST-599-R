@@ -1,11 +1,9 @@
 ---
 title: "Git & Github"
-output:
-  html_notebook: default
-  html_document:
-    highlight: textemate
-    theme: spacelab
-    toc: yes
+output: 
+  html_document: default
+  html_notebok: default
+runtime: shiny 
 ---
 
 # Outlines
@@ -61,24 +59,52 @@ You can also use the command line version, by clicking the cog and then “Shell
 
 If you’ve never used Git or GitHub before, start by installing Git and creating a GitHub account. Then, link the two together:
 
-- 1. Install git from: http://r-pkgs.had.co.nz/git.html
+ 1. Install git from: http://r-pkgs.had.co.nz/git.html
 
-- 2. Tell Git your user.name and email. These are used to label each commit so that when you start collaborating with others, it’s clear who made each change
-- 3. Create an account on GitHub, https://github.com
-- 4. Create a public repo from your github account
-- 5. create local git repo using R studio project and clone your online repo to the local one 
+ 2. Tell Git your user.name and email. These are used to label each commit so that when you start collaborating with others, it’s clear who made each change
+ 
+ 3. Create an account on GitHub, https://github.com
+ 
+ 4. Create a public repo from your github account
+ 
+ 5. create local git repo using R studio project and clone your online repo to the local one 
 
+Read if you want more details: https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN
 
 # Demo
+
+```{r setup}
+library(ggplot2)
+library(dplyr)
+library(shiny)
+```
+
 ```{r}
-plot(cars)
+son <- rnorm(200, 10,2)
+summary(son)
 ```
 
 
-
-
 ```{r}
-ggplot2::qplot(Sepal.Length, Petal.Length, data = iris, color = Species, 
-      size = Petal.Width)
+
+plot(cars)
+```
+
+```{r, echo=FALSE}
+selectInput('x', 'x-axix var', choices = names(iris)[1:4])
+selectInput('y', 'y-axix var', choices = names(iris)[1:4])
+
+```
+
+
+ 
+```{r, echo=FALSE}
+renderPlot({
+  iris %>%
+    mutate_(x = lazyeval::interp(~var,var = as.name(input$x) ),
+            y = lazyeval::interp(~var,var = as.name(input$y) )
+           ) %>%
+ ggplot(aes(x, y   ) )+geom_point(aes(color = Species, shape = Species),size = 4)#+xlab('')+ylab('')
+      })
 ```
 
