@@ -94,8 +94,8 @@ plot(cars)
 ```
 
 ```{r, echo=FALSE}
-selectInput('x', 'x-axix var', choices = names(iris)[1:4])
-selectInput('y', 'y-axix var', choices = names(iris)[1:4])
+selectInput('x', 'x-axis var', choices = names(iris)[1:4])
+selectInput('y', 'y-axis var', choices = names(iris)[1:4])
 
 ```
 
