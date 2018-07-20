@@ -45,6 +45,8 @@ In RStudio most commands translate directly to buttons:
 
 - Pull: If collaborating as a group you pull any new things other people have changed
 
+-Pull requests: let you tell others about changes you've pushed to a GitHub repository. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
+
 - Diff: Two different versions may be “diffed,” which means to reveal the changes between them
 
 - Stage: Not all files need to be included in a version; staging a set of files marks them for inclusion in the version when the next commit happens. 
